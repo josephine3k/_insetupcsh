@@ -15,7 +15,7 @@ read SNAME2
 cat="cat"
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 # check registered ip
-wget -q -O /tmp/daftarip http://pisovpn.com/license/ip.txt
+wget -q -O /tmp/daftarip https://pisovpn.com/license/ip.txt
 if ! grep -w -q $MYIP /tmp/daftarip; then
 	echo ""
 	echo ""
