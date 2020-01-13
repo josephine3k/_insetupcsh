@@ -5,8 +5,6 @@
 # version v.3.0 3n1 Installer.
 # Features: OpenVPN/SSL/Dropbear/Squid Proxy
 # Date Modified: 9/15/2018
-cd /
-mkdir tmp
 cd /root
 yum install wget -y &> /dev/null
 sitename="pisovpn.com"
@@ -14,31 +12,7 @@ SNAME1="xxxxxxxxxx";
 SNAME2="";
 echo "Server Name:"
 read SNAME2
-cat="cat"
 MYIP=$(wget -qO- ipv4.icanhazip.com);
-# check registered ip
-wget -q -O /tmp/daftarip https://pisovpn.com/license/ip.txt
-if ! grep -w -q $MYIP /tmp/daftarip; then
-	echo ""
-	echo ""
-	echo "IP is not registered"
-	echo "Please contact PisoVPN support."
-	echo ""
-	echo ""
-	if [[ $cat = "cat" ]]; then
-		echo "visit: https://www.pisovpn.com"
-		echo ""
-		echo ""
-		echo ""
-	else
-		echo ""
-	fi
-	rm -rf /tmp/daftarip
-	rm -rf *sh
-	
-	exit
-fi
-
 # Installer
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config &> /dev/null
