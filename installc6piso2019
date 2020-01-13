@@ -5,6 +5,8 @@
 # version v.3.0 3n1 Installer.
 # Features: OpenVPN/SSL/Dropbear/Squid Proxy
 # Date Modified: 9/15/2018
+cd /
+mkdir tmp
 cd /root
 yum install wget -y &> /dev/null
 sitename="pisovpn.com"
